@@ -79,11 +79,10 @@
 	return %orig;
 }
 
-- (NSString*)bs
+//itry://appshike.com?paramet=LHn0y+BOAjuU4eUyh865aBmD6cMI8QOpUEu0gL0TLQPk4LKoW1mnLL6Ah8JsrOO0QssMgXAnBkqmkOuJOAbJ6x3SzxbqlMT4
+- (void)verifyUser:(id)arg1
 {
-	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"AngelFaceViewController" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-	[alertView show];
-	NSLog(@"setbs arg1 is %@ callback symbol is %@",@"",[NSThread callStackSymbols]);
+	NSLog(@"verifyUser arg1 is %@ callback symbol is %@",arg1,[NSThread callStackSymbols]);
 	return %orig;
 }
 
