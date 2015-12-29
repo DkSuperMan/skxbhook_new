@@ -1,0 +1,9 @@
+Package: com.iosre.skxbhook
+Name: skxbhook
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: jin
+Author: jin
+Section: Tweaks
