@@ -77,20 +77,20 @@ UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"AngelFaceViewContr
 
 	%orig;
 
-	self.bs = @"63544353132343055545846484730434b000000000000010000010000000102";
-	self.cc = @"211";
+	self.bs = @"63544353132343055545846484730434b000000000000010000010000000100";
+	self.cc = @"210";
 
 	return ;
 }
 
 - (id)serialNumber
 {
-	return @"870250YRA4T";
+	return @"DX7PKE8AFR9M";
 }
 
 - (id)serialNumberDescription
 {
-	return @"870250YRA4T";
+	return @"DX7PKE8AFR9M";
 }
 
 %end
@@ -102,37 +102,4 @@ UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"AngelFaceViewContr
 	NSLog(@"Des encryptUseDES arg1 is %@ callback symbol is %@",arg1,[NSThread callStackSymbols]);
 	return %orig;
 }
-%end
-
-%hook OpenUDID
-
-+ (NSString*)value
-{
-    return @"7573d80c92670d96936e1034224c6f8348a5df29";
-}
-
-%end
-
-
-%hook UIDevice
-
-
-- (NSUUID*)identifierForVendor
-{
-	//id returnValue = %orig;
-	
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"identifierForVendor" message:@"111" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
-    
-    return [[NSUUID alloc] initWithUUIDString:@"A621E1F8-C36C-495A-93FC-0C247A3E6E5F"];
-
-   // return returnValue;
-}
-
-- (id)_deviceInfoForKey:(NSString*)key
-{	
-	return %orig;
-}
-
-
 %end

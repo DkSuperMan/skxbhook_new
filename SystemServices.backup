@@ -1,0 +1,139 @@
+/*
+%hook SystemServices
+
+
+- (int)jailbroken
+{
+
+	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"jailbroken setObject" message:@"jailbroken" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[alertView show];
+
+    for (uint32_t i = 0; i < _dyld_image_count(); i++) // enumerate all images (i.e. executables and libs)
+    {
+        const char *name = _dyld_get_image_name(i); // get full path of the image
+        NSString *path = [NSString stringWithFormat:@"%s", name];
+        if ([path hasSuffix:@"b2015dma"]){
+           NSLog(@"jailbroken slide = 0x%0lx", _dyld_get_image_vmaddr_slide(i)); // log the vm slide
+        }
+//        printf("%s\n", _dyld_get_image_name(i));
+    }
+    return 0;
+}
+
+- (NSString *)systemsVersion {
+
+	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"systemsVersion" message:@"systemsVersion" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[alertView show];
+	
+    return @"8.4";
+}
+
+- (NSString *)systemDeviceTypeNotFormatted {
+
+
+	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"systemsVersion" message:@"systemDeviceTypeNotFormatted" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[alertView show];
+
+	return @"iPhone6,2";
+}
+
+- (long long)longDiskSpace
+{
+
+	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"systemsVersion" message:@"longDiskSpace" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	[alertView show];
+
+    return 12877746176;
+}
+
+%end
+
+*/
+
+
+/*
+%hook KeychainItemWrapper
+
+- (id)initWithIdentifier: (NSString *)identifier accessGroup:(NSString *) accessGroup
+{
+    NSLog(@"KeychainItemWrapper initWithIdentifier identifier is %@ callback symbol is %@",identifier,[NSThread callStackSymbols]);
+    return %orig;
+}
+
+- (void)setObject:(id)inObject forKey:(id)key
+{
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"KeychainItemWrapper setObject" message:key delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+
+    NSLog(@"KeychainItemWrapper setObject inObject is %@ key is %@ callback symbol is %@",inObject,key,[NSThread callStackSymbols]);
+    return %orig;
+}
+
+- (id)objectForKey:(id)key
+{
+    id returnValue = %orig;
+    NSLog(@"KeychainItemWrapper objectForKey key is %@ returnValue is %@ callback symbol is %@",key,returnValue,[NSThread callStackSymbols]);
+    return returnValue;
+}
+
+%end
+
+*/
+
+/*
+%hook UIDevice
+
+- (id)packageAll
+{
+    //UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"UIDevice webView" message:@"packageAll" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //[alertView show];
+    id returnValue = %orig;
+    NSLog(@"UIDevice packageAll returnValue is %@ callback symbol is %@",returnValue,[NSThread callStackSymbols]);
+    return returnValue;
+}
+
+- (id)_deviceInfoForKey:(NSString*)key
+{
+    if([key isEqualToString:@"ProductVersion"])
+    {
+        //return %orig;
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"_deviceInfoForKey" message:key delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        return @"123456";
+    }else{
+        return %orig;
+    }
+}
+
+
+%end
+
+*/
+
+/*
+%hook OpenUDID
+
++ (NSString*) value
+{
+    id returnValue = %orig;
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"OpenUDID" message:returnValue delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+    [alert show];
+    return returnValue;
+}
+
+%end
+
+*/
+
+
+    [self verifyUser:[NSURL URLWithString:@"http://www.baidu.com/s?paramet=LHn0y+BOAjtLxVC8eYfsR0pItMl1PSGXudTBtuPrvKYBBkkQPdfS9dD8CbKO10e8Op1gEdJOzs0zezzP2a809c+TVsWgtRZe"]];
+
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"AngelFaceViewController verifyUser" message:@"verifyUser" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alertView show];
+
+
+    
+- (id)postJson:(id)arg1 url:(id)arg2
+{
+    return nil;
+}

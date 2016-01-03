@@ -1,7 +1,7 @@
 {
 	Filter = {
 		Bundles = (
-			"com.jin.developer.testDES",
+			"com.keson.yanwen",
 		);
 	};
 }
