@@ -77,20 +77,20 @@ UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"AngelFaceViewContr
 
 	%orig;
 
-	self.bs = @"63544353132343055545846484730434b000000000000010000010000000102";
-	self.cc = @"211";
+	self.bs = @"63544353132343055545846484730434b000000000000010000010000000106";
+	self.cc = @"216";
 
 	return ;
 }
 
 - (id)serialNumber
 {
-	return @"870250YRA4T";
+	return @"C39LWZ6QFRC5";
 }
 
 - (id)serialNumberDescription
 {
-	return @"870250YRA4T";
+	return @"C39LWZ6QFRC5";
 }
 
 %end
@@ -108,7 +108,7 @@ UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"AngelFaceViewContr
 
 + (NSString*)value
 {
-    return @"7573d80c92670d96936e1034224c6f8348a5df29";
+    return @"7573d80c92670d96936e1034224c6f8348a5df69";
 }
 
 %end
@@ -119,14 +119,7 @@ UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"AngelFaceViewContr
 
 - (NSUUID*)identifierForVendor
 {
-	//id returnValue = %orig;
-	
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"identifierForVendor" message:@"111" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
-    
-    return [[NSUUID alloc] initWithUUIDString:@"A621E1F8-C36C-495A-93FC-0C247A3E6E5F"];
-
-   // return returnValue;
+    return [[NSUUID alloc] initWithUUIDString:@"B621E1F8-C36C-495A-93FC-0C247A3E6E6F"];
 }
 
 - (id)_deviceInfoForKey:(NSString*)key
